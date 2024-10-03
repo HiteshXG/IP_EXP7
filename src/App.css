@@ -1,38 +1,125 @@
-.App {
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(69, 91, 91);
+  background: linear-gradient(90deg, rgba(69, 91, 91, 1) 5%, rgba(186, 187, 155, 1) 82%);
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.feedback-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.transparent-card {
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.feedback-title {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: white;
+  margin-bottom: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.input-label {
+  display: block;
+  color: white;
+  text-align: left;
+  margin-bottom: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.75rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-field:focus,
+.textarea-field:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.textarea-field {
+  height: 8rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
+  border-radius: 0.75rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .transparent-card {
+    max-width: 95%;
+    padding: 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .feedback-title {
+    font-size: 1.25rem;
+  }
+
+  .textarea-field {
+    height: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .transparent-card {
+    max-width: 65%;
+    padding: 1rem;
+  }
+
+  .feedback-title {
+    font-size: 1.1rem;
+  }
+
+  .textarea-field {
+    height: 5rem;
+  }
+
+  .submit-button {
+    padding: 0.5rem;
   }
 }

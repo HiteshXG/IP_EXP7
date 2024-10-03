@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Toaster, toast } from 'react-hot-toast';
 import './App.css'; // Ensure this matches your CSS file name
 
 const TransparentCard = ({ children }) => {
@@ -17,8 +16,6 @@ const FeedbackForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Feedback submitted:', { username, comment });
-
-    toast.success("Successfully Submitted!");
     setUsername('');
     setComment('');
   };
@@ -58,7 +55,6 @@ const FeedbackForm = () => {
             Submit
           </button>
         </form>
-        <Toaster />
       </TransparentCard>
     </div>
   );
